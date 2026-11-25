@@ -4,10 +4,13 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATASET_DIR = PROJECT_ROOT / "dataset"
+
 csv_path = (
-    "recipeex001.csv"
-    if Path("recipeex001.csv").exists()
-    else "recipeex001"
+    DATASET_DIR / "recipeex001.csv"
+    if (DATASET_DIR / "recipeex001.csv").exists()
+    else DATASET_DIR / "recipeex001"
 )
 
 df = pd.read_csv(csv_path)
