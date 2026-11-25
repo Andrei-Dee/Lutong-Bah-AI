@@ -75,7 +75,7 @@ if raw_query:
         name = df.iloc[idx]["Name"]
         ing = df.iloc[idx]["Ingredients"]
         sim = scores[idx]
-        print(f"[{rank}] {name} | sim: {sim:.4f} | {ing[:100]}...")
+        print(f"[{rank}] {name} | sim: {sim:.4f} | {ing[:]}")
 
 # print the time elapsed
 end_time = time.perf_counter()
